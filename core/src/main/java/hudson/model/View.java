@@ -1294,11 +1294,7 @@ public abstract class View extends AbstractModelObject implements AccessControll
         return r;
     }
 
-    public static final Comparator<View> SORTER = new Comparator<View>() {
-        public int compare(View lhs, View rhs) {
-            return lhs.getViewName().compareTo(rhs.getViewName());
-        }
-    };
+    public static final Comparator<View> SORTER = NumberAwareViewComparator.INSTANCE;
 
     public static final PermissionGroup PERMISSIONS = new PermissionGroup(View.class,Messages._View_Permissions_Title());
     /**
